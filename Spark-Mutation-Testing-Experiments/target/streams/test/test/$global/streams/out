@@ -1,0 +1,225 @@
+[0m[[0mdebug[0m] [0mjavaOptions: List(-Xms512M, -Xmx2048M, -XX:MaxPermSize=2048M, -XX:+CMSClassUnloadingEnabled)[0m
+[0m[[0mdebug[0m] [0mForking tests - parallelism = false[0m
+[0m[[0mdebug[0m] [0mCreate a single-thread test executor[0m
+[0m[[0mdebug[0m] [0mRunner for org.scalacheck.ScalaCheckFramework produced 0 initial tasks for 0 tests.[0m
+[0m[[0mdebug[0m] [0mRunner for org.scalatest.tools.Framework produced 3 initial tasks for 3 tests.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQueryTest, sbt.ForkMain$SubclassFingerscan@188edbbf, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mScanQueryTest:[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  org.apache.spark.SparkException: Job aborted due to stage failure: Task 3 in stage 0.0 failed 1 times, most recent failure: Lost task 3.0 in stage 0.0 (TID 3, localhost, executor driver): java.lang.NumberFormatException: For input string: " 301"[0m[0m
+[0m[[0minfo[0m] [0m[31m	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at java.lang.Integer.parseInt(Integer.java:569)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at java.lang.Integer.parseInt(Integer.java:615)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at scala.collection.immutable.StringLike$class.toInt(StringLike.scala:272)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at scala.collection.immutable.StringOps.toInt(StringOps.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQuery$.parseRankings(ScanQuery.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQuery$$anonfun$1.apply(ScanQuery.scala:38)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQuery$$anonfun$1.apply(ScanQuery.scala:38)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$11.next(Iterator.scala:409)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$13.hasNext(Iterator.scala:462)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at org.apache.spark.scheduler.Task.run(Task.scala:109)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:345)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)[0m[0m
+[0m[[0minfo[0m] [0m[31m	at java.lang.Thread.run(Thread.java:745)[0m[0m
+[0m[[0minfo[0m] [0m[31m[0m[0m
+[0m[[0minfo[0m] [0m[31mDriver stacktrace:[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1602)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1590)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1589)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1589)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:831)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:831)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.Option.foreach(Option.scala:257)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:831)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  Cause: java.lang.NumberFormatException: For input string: " 301"[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.lang.Integer.parseInt(Integer.java:569)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at java.lang.Integer.parseInt(Integer.java:615)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.StringLike$class.toInt(StringLike.scala:272)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.StringOps.toInt(StringOps.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQuery$.parseRankings(ScanQuery.scala:29)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQuery$$anonfun$1.apply(ScanQuery.scala:38)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQuery$$anonfun$1.apply(ScanQuery.scala:38)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$11.next(Iterator.scala:409)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$13.hasNext(Iterator.scala:462)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(SparkTestExample, sbt.ForkMain$SubclassFingerscan@fb60e81, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mSparkTestExample:[0m[0m
+[0m[[0minfo[0m] [0m[32m- really simple transformation[0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0mdebug[0m] [0m  Running TaskDef(br.ufrn.dimap.forall.spark.ngrams.NGramsCountTest, sbt.ForkMain$SubclassFingerscan@13e2f926, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[32mNGramsCountTest:[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with original[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with original[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with original[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with original[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 1[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 1[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 1[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 1 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),1),1,0)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 2[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 2 - RDD with Empty String - with mutant 2 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, <end>),1),1,0)) (NGramsCountTest.scala:81)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 2[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with mutant 2[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 3 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),1),0,1)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 2 - RDD with Empty String - with mutant 3 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, <end>),1),1,0)) (NGramsCountTest.scala:81)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 3 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 3 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 4[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 4[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 4[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 4 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 5 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),1),0,1)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 5[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 5 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 5 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 6[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 6[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 6[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with mutant 6[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 7 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(is, a, sentece),1),0,1)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 7[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 7 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 7 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 8 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),1),0,1)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 8[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 8 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 8 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 9[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 9[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 9[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with mutant 9[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 10 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(is),1),1,0)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 10[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 10 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 10 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 11 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, this),1),1,0)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 11[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 11 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(is, a),2),1,0)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 11 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(is, a),2),1,0)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 12 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),1),0,1)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 12[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 12 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 12 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 13 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),0),1,0)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 13[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 13 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),0),1,0)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 13 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),0),1,0)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 14 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, this, is),-2147483648),1,0)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 14[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 14 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),0),1,0)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 14 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),0),1,0)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 15 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, this, is),2147483647),1,0)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 15[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 15 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),-2),1,0)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 15 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),-2),1,0)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 1 - One element with one sentence RDD - with mutant 16 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(<start>, <start>, this),1),0,1)) (NGramsCountTest.scala:63)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 16[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 16 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),-2),1,0)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 16 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),-2),1,0)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 17[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 17[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 17 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 17 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 18[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 18[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 18 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 18 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 19[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 19[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 19[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with mutant 19[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 20[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 20[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 20 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with mutant 20[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 21[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 21[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 21 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 21 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 22[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 22[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 22 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 22 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 23[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 23[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 3 - Two elements with the same sentence RDD - with mutant 23 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m- test 4 - One element with two of the same sentence RDD - with mutant 23 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  None did not equal Some(((List(this, is, a),2),0,1)) (NGramsCountTest.scala:125)[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 1 - One element with one sentence RDD - with mutant 24[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 2 - RDD with Empty String - with mutant 24[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 3 - Two elements with the same sentence RDD - with mutant 24[0m[0m
+[0m[[0minfo[0m] [0m[32m- test 4 - One element with two of the same sentence RDD - with mutant 24[0m[0m
+[0m[[0mdebug[0m] [0m    Produced 0 nested tasks and 100 events.[0m
+[0m[[0mdebug[0m] [0mSummary for ScalaCheck not available.[0m
+[0m[[0minfo[0m] [0mScalaTest[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 21 seconds, 801 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 102[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 3, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 53, failed 49, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[31m*** 49 TESTS FAILED ***[0m[0m
+[0m[[31merror[0m] [0mFailed: Total 102, Failed 49, Errors 0, Passed 53[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	SparkTestExample[0m
+[0m[[31merror[0m] [0mFailed tests:[0m
+[0m[[31merror[0m] [0m	br.ufrn.dimap.forall.spark.ngrams.NGramsCountTest[0m
+[0m[[31merror[0m] [0m	br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQueryTest[0m
+[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

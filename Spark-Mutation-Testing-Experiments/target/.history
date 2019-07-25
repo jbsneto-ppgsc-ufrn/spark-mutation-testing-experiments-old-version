@@ -1,0 +1,3 @@
+testOnly br.ufrn.dimap.forall.spark.bigdatabenchmark.scan.ScanQueryTest
+testOnly br.ufrn.dimap.forall.spark.ngrams.NGramsCountTest
+testOnly br.ufrn.dimap.forall.spark.movielens.recomendation.MoviesRecommendationTest
